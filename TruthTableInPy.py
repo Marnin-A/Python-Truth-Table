@@ -1,6 +1,6 @@
 # INSTRUCTIONS
 
-# Design and implement a function that creates all possible combinations of truth values for a gven set of propositional variales eg,
+# Design and implement a function that creates all possible combinations of truth values for a given set of propositional variables eg,
 # Given a list of propositional variables ['P','Q'], you would generate [[True, True], [True, False],[False, True], [False, False]],
 # the boolean values should be in canonical order.
 # In addition write a 150 word summary explaining the process you designed to a team member in a different field. 
@@ -16,20 +16,29 @@ variable_list =['P','Q','R','S']
 number_of_rows = 2**len(variable_list)
 print(number_of_rows)
 
-
-# Step 2
-# for i in range(number_of_rows):
-#     print(i)
-
 # Step 3
 for i in range(number_of_rows):
-    #print("The binary number for {} is {}".format(number_of_rows, bin(i) ))
-    # current_binary= str(bin(i).[2:])
-    # print(current_binary)
-    widest_num_in_table= len(str(bin(number_of_rows-1)[2:]))
-    print(bin(i)[2:].zfill(widest_num_in_table))
-    current_binary = bin(i)[2:].zfill(widest_num_in_table)
-    
 
-print(widest_num_in_table)
+    widest_num_in_table= len((bin(number_of_rows-1)[2:]))
+     
+    current_binary = (bin(i)[2:].zfill(widest_num_in_table))
     
+    #Reverse list 
+ 
+    result = [int(x) for x in str(current_binary)]
+
+    result = [bool(y) for y in result]
+
+    print(result)
+    
+    # print(list(reversed(current_binary)))
+    # print("\n")
+    # for j in range(number_of_rows):
+    #     for k in range(len(current_binary)):
+    #         if current_binary[k]=="0":
+    #             current_binary[k] = current_binary[k][4:]
+    #             print(current_binary[k])
+    #             # current_binary[k].append("false")
+    #         else:
+    #             # current_binary[k].append("true")
+    #             print(current_binary[k])
