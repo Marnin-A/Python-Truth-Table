@@ -11,34 +11,28 @@
 # 5. Append the true and false values to a list
 
 
-# Step 1
+# Create variable list
 variable_list =['P','Q','R','S']
+
+# Calculate number of rows
 number_of_rows = 2**len(variable_list)
-print(number_of_rows)
 
-# Step 3
-for i in range(number_of_rows):
-
+# Create a for-loop to convert all decimal integers from 0 to the number
+# of rows to binary
+# Set the for loop to iterate backwards
+for i in range(number_of_rows)[::-1]:
+    # Determine the length of the longest binary number
     widest_num_in_table= len((bin(number_of_rows-1)[2:]))
-     
+
+    #  Remove the first two characters, and add padding
+    #  to the remaining value
     current_binary = (bin(i)[2:].zfill(widest_num_in_table))
     
-    #Reverse list 
- 
+    #  Convert the binary to arrays of 0's and 1's
     result = [int(x) for x in str(current_binary)]
-
+    
+    #  Convert the 0's and 1's to True and False strings
     result = [bool(y) for y in result]
 
-    print(result)
+    print((str(result)))
     
-    # print(list(reversed(current_binary)))
-    # print("\n")
-    # for j in range(number_of_rows):
-    #     for k in range(len(current_binary)):
-    #         if current_binary[k]=="0":
-    #             current_binary[k] = current_binary[k][4:]
-    #             print(current_binary[k])
-    #             # current_binary[k].append("false")
-    #         else:
-    #             # current_binary[k].append("true")
-    #             print(current_binary[k])
