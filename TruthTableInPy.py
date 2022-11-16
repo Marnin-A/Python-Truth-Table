@@ -29,10 +29,10 @@ for i in range(number_of_rows)[::-1]:
     current_binary = (bin(i)[2:].zfill(widest_num_in_table))
     
     #  Convert the binary to arrays of 0's and 1's
-    result = [int(x) for x in str(current_binary)]
+    result = [int(x) for x in current_binary]
     
     #  Convert the 0's and 1's to True and False strings
     result = [bool(y) for y in result]
 
-    print((str(result)))
+    print(result)
     
